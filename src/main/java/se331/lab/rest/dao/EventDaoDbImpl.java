@@ -37,9 +37,10 @@ public class EventDaoDbImpl implements EventDao {
         return eventRepository.save(event);
     }
 
-//    @Override
-//    public Page<Event> getEvent(String title, Pageable pa) {
-//        return eventRepository.save(event);
-//    }
+    @Override
+    public Page<Event> getEvent(String title, Pageable page) {
+        return eventRepository.findByTitle(title,page);
+    }
+
 
 }

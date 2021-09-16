@@ -2,6 +2,7 @@ package se331.lab.rest.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import se331.lab.rest.dao.EventDao;
 import se331.lab.rest.dao.OrganizerDao;
@@ -29,6 +30,11 @@ public class EventServiceImpl implements EventService{
     @Override
     public Event getEvent(Long id) {
         return eventDao.getEvent(id);
+    }
+
+    @Override
+    public Page<Event> getEvents(String title, Pageable pageable) {
+        return eventDao.getEvent(title,pageable);
     }
 
     @Override
