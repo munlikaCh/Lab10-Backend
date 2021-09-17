@@ -41,7 +41,8 @@ public class EventDaoDbImpl implements EventDao {
     public Page<Event> getEvent(String title, Pageable page) {
         return
 //                eventRepository.findByTitleContainingOrDescriptionContaining(title,title,page);
-                eventRepository.findByTitleContainingAndDescriptionContaining(title,title,page);
+//                eventRepository.findByTitleContainingAndDescriptionContaining(title,title,page);
+                eventRepository.findByTitleContainingOrDescriptionContainingOrOrganizer_NameContaining(title,title,title,page);
     }
 
 
